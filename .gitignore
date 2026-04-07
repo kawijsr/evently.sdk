@@ -3,6 +3,7 @@
 /node_modules
 /build
 .assets/
+tsconfig.tsbuildinfo
 
 # Logs
 logs
