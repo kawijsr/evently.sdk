@@ -1,0 +1,24 @@
+{
+  "name": "evently.sdk",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-kawi:kawijsr/evently.sdk.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1"
+  }
+}
