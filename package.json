@@ -1,5 +1,5 @@
 {
-  "name": "evently.sdk",
+  "name": "@kawijsr/evently-sdk",
   "version": "1.0.0",
   "description": "",
   "types": "dist/index.d.ts",
