@@ -14,7 +14,8 @@ export const request = {
         headers: response.headers,
         url: response.url,
       });
-      throw new Error(response.statusText);
+      console.error(response.statusText);
+      return;
     }
     return response.json();
   },
@@ -26,7 +27,7 @@ export const request = {
       headers,
       body: JSON.stringify(data),
     }).then(request.buildResponse).catch(error => {
-      throw error;
+      console.error(error);
     });
   },
 };
