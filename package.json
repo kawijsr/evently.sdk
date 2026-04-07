@@ -15,7 +15,6 @@
   ],
   "license": "MIT",
   "author": "",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && tsc",
