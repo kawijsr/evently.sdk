@@ -6,7 +6,7 @@ export const trackSdk = {
     request.post(CONSTANTS.PATH_TRACK_EVENT, {
       type,
       event,
-      payload
+      payload: typeof payload === 'object' ? JSON.stringify(payload) : payload,
     }).catch(err => {});
   }
 }
