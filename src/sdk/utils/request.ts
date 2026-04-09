@@ -3,10 +3,10 @@ import {Evently} from '../evently.sdk';
 
 export const request = {
   baseUrl: CONSTANTS.API_URL,
-  headers: {
+  headers: () => ({
     'content-type': 'application/json',
     'Authorization': 'ApiKey ' + Evently.getInstance()?.apiKey || process.env.EVENTLY_PRIVATE_API_KEY,
-  },
+  }),
   buildResponse: (response) => {
     if (response.status !== 200 && response.status !== 201) {
       console.error({
@@ -22,7 +22,7 @@ export const request = {
   },
   post: (url, data) => {
     url = `${request.baseUrl}${url}`;
-    const headers = { ...request.headers };
+    const headers = { ...request.headers() };
     return fetch(url, {
       method: 'POST',
       headers,

@@ -20,6 +20,8 @@ export class Evently {
   }
 
   static init = ({apiKey}: { apiKey: string}) => {
-    return new Evently({apiKey});
+    const newInstance = new Evently({apiKey});
+    Evently.instance = newInstance;
+    return newInstance;
   }
 }
