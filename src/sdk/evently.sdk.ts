@@ -6,11 +6,10 @@ export const evently = {
 
 export class Evently {
   private static instance: Evently;
-  track: Function;
+  static track = trackSdk.track;
   apiKey: string;
 
   constructor({apiKey}: { apiKey: string}) {
-    this.track = trackSdk.track;
     this.apiKey = apiKey;
     Evently.instance = this;
   }
