@@ -8,7 +8,7 @@ export const request = {
     'x-api-key': 'ApiKey ' + Evently.getInstance()?.apiKey || process.env.EVENTLY_PRIVATE_API_KEY,
   }),
   buildResponse: (response) => {
-    if (response.status !== 200 && response.status !== 201) {
+    if (!response.ok) {
       console.error({
         status: response.status,
         statusText: response.statusText,
@@ -17,6 +17,10 @@ export const request = {
       });
       console.error(response.statusText);
       return;
+    }
+    const contentLength = response.headers.get('content-length');
+    if (contentLength === null || contentLength?.length === 0) {
+      return response.text();
     }
     return response.json();
   },
