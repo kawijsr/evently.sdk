@@ -19,7 +19,7 @@ export const request = {
       return;
     }
     const contentLength = response.headers.get('content-length');
-    if (contentLength === null || contentLength?.length === 0) {
+    if (!contentLength || contentLength.length === 0 || contentLength == '0') {
       return response.text();
     }
     return response.json();
