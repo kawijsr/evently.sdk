@@ -1,1 +1,1 @@
-export {evently} from './sdk/evently.sdk';
+export {evently, Evently} from './sdk/evently.sdk';

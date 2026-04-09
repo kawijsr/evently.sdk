@@ -1,10 +1,11 @@
 import {CONSTANTS} from '../constants';
+import {Evently} from '../evently.sdk';
 
 export const request = {
   baseUrl: CONSTANTS.API_URL,
   headers: {
     'content-type': 'application/json',
-    'Authorization': 'ApiKey ' + process.env.EVENTLY_PRIVATE_API_KEY,
+    'Authorization': 'ApiKey ' + Evently.getInstance()?.apiKey || process.env.EVENTLY_PRIVATE_API_KEY,
   },
   buildResponse: (response) => {
     if (response.status !== 200 && response.status !== 201) {
