@@ -5,7 +5,7 @@ export const request = {
   baseUrl: CONSTANTS.API_URL,
   headers: () => ({
     'content-type': 'application/json',
-    'x-api-key': 'ApiKey ' + Evently.getInstance()?.apiKey || process.env.EVENTLY_PRIVATE_API_KEY,
+    'x-api-key': `ApiKey ${(Evently.getInstance()?.apiKey || process.env.EVENTLY_PRIVATE_API_KEY)}`,
   }),
   buildResponse: (response) => {
     if (!response.ok) {
